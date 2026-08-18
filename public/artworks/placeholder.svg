@@ -1,0 +1,24 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" fill="#e7e1d5"/>
+  <rect x="80" y="80" width="640" height="840" fill="none" stroke="#1c1b19" stroke-width="2" opacity="0.25"/>
+  <text
+    x="400"
+    y="470"
+    text-anchor="middle"
+    font-family="Georgia, serif"
+    font-size="42"
+    fill="#1c1b19"
+    opacity="0.45">
+    ARTWORK
+  </text>
+  <text
+    x="400"
+    y="530"
+    text-anchor="middle"
+    font-family="system-ui, sans-serif"
+    font-size="18"
+    fill="#1c1b19"
+    opacity="0.35">
+    Photo coming soon
+  </text>
+</svg>

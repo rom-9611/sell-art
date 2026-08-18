@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+import ArtworkCard from "../components/ArtworkCard.astro";
+import { artworks } from "../data/artworks";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Browse Fine Arts assignment artwork."
+    />
+    <title>Gallery · Fine Arts 2026</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">FINE ARTS<span>·2026</span></a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/#about">About</a>
+      </nav>
+    </header>
+
+    <main class="gallery-page">
+      <section class="gallery-header">
+        <p class="eyebrow">Artwork</p>
+
+        <h1>
+          Browse the
+          <br />
+          <em>gallery.</em>
+        </h1>
+
+        <p>
+          Choose individual drawings or explore the available category packs.
+        </p>
+      </section>
+
+      <section class="artwork-grid">
+        {artworks.map((artwork) => (
+          <ArtworkCard artwork={artwork} />
+        ))}
+      </section>
+    </main>
+  </body>
+</html>

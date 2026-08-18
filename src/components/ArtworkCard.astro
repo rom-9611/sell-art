@@ -1,0 +1,46 @@
+---
+import type { Artwork } from "../data/artworks";
+
+interface Props {
+  artwork: Artwork;
+}
+
+const { artwork } = Astro.props;
+---
+
+<article class="artwork-card">
+  <div class="artwork-image">
+    <img
+      src={artwork.image}
+      alt={artwork.title}
+      loading="lazy"
+    />
+  </div>
+
+  <div class="artwork-info">
+    <div>
+      <p class="artwork-category">{artwork.category}</p>
+      <h2>{artwork.title}</h2>
+    </div>
+
+    <p class="artwork-description">
+      {artwork.description}
+    </p>
+
+    <div class="artwork-prices">
+      <div>
+        <span>Individual</span>
+        <strong>₹{artwork.individualPrice}</strong>
+      </div>
+
+      <div>
+        <span>2× Pack</span>
+        <strong>₹{artwork.packPrice}</strong>
+      </div>
+    </div>
+
+    <a href="#order" class="artwork-button">
+      Request this artwork →
+    </a>
+  </div>
+</article>

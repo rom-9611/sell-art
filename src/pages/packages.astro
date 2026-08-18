@@ -1,0 +1,152 @@
+---
+import "../styles/global.css";
+import { products } from "../data/products";
+
+const portfolio = products.find(
+  (product) => product.id === "complete-portfolio"
+)!;
+
+const assignmentCombo = products.find(
+  (product) => product.id === "complete-assignment"
+)!;
+
+const categoryPacks = products.filter(
+  (product) => product.type === "category"
+);
+
+const customOrder = products.find(
+  (product) => product.id === "custom-order"
+)!;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Fine Arts 2026 assignment packages and custom orders."
+    />
+    <title>Packages · Fine Arts 2026</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">FINE ARTS<span>·2026</span></a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/packages">Packages</a>
+      </nav>
+    </header>
+
+    <main class="packages-page">
+      <section class="packages-header">
+        <p class="eyebrow">Choose your option</p>
+
+        <h1>
+          Pick what
+          <br />
+          <em>you need.</em>
+        </h1>
+
+        <p>
+          From the complete assignment to individual drawings, choose the
+          option that works for you.
+        </p>
+      </section>
+
+      <section class="main-packages">
+        <article class="package-card package-card-featured">
+          <p class="package-label">Most convenient</p>
+
+          <h2>{assignmentCombo.name}</h2>
+
+          <p>{assignmentCombo.description}</p>
+
+          <ul>
+            {assignmentCombo.includes.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+
+          <div class="package-bottom">
+            <strong>
+              ₹{assignmentCombo.price.toLocaleString("en-IN")}
+            </strong>
+
+            <a href="#order">Request →</a>
+          </div>
+        </article>
+
+        <article class="package-card">
+          <p class="package-label">Premium</p>
+
+          <h2>{portfolio.name}</h2>
+
+          <p>{portfolio.description}</p>
+
+          <ul>
+            {portfolio.includes.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+
+          <div class="package-bottom">
+            <strong>
+              ₹{portfolio.price.toLocaleString("en-IN")}
+            </strong>
+
+            <a href="#order">Request →</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="category-section">
+        <div class="section-heading">
+          <p class="eyebrow">Category packs</p>
+
+          <h2>
+            Choose a
+            <br />
+            <em>category.</em>
+          </h2>
+        </div>
+
+        <div class="category-grid">
+          {categoryPacks.map((pack) => (
+            <article class="category-card">
+              <p>{pack.name}</p>
+
+              <span>{pack.includes[0]}</span>
+
+              <strong>
+                ₹{pack.price.toLocaleString("en-IN")}
+              </strong>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="custom-section" id="order">
+        <p class="eyebrow">Something different?</p>
+
+        <h2>
+          Need a
+          <br />
+          <em>custom order?</em>
+        </h2>
+
+        <p>
+          {customOrder.description}
+        </p>
+
+        <a class="hero-button" href="#contact">
+          Request a custom order
+          <span>→</span>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

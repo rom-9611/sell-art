@@ -1,0 +1,105 @@
+---
+import "../styles/global.css";
+import { products } from "../data/products";
+
+const deadline = "15 October 2026";
+
+const assignmentCombo = products.find(
+  (product) => product.id === "complete-assignment"
+)!;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Fine Arts artwork for the 2026 school assignment." />
+    <title>Fine Arts · 2026</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">FINE ARTS<span>·2026</span></a>
+
+      <nav>
+        <a href="/gallery">Gallery</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">School Fine Arts Assignment</p>
+
+          <h1>
+            14 Drawings.
+            <br />
+            <em>One Deadline.</em>
+          </h1>
+
+          <p class="hero-description">
+            Need to complete your Fine Arts assignment before
+            <strong>{deadline}</strong>?
+          </p>
+
+          <a class="hero-button" href="/gallery">
+            Browse artwork
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span>01</span>
+          <p>
+            Landscape<br />
+            Poster Design<br />
+            Mandala<br />
+            Still Life<br />
+            Portrait
+          </p>
+        </div>
+      </section>
+      <section class="featured-offer">
+        <div>
+          <p class="eyebrow">Most convenient</p>
+
+          <h2>
+            Complete Assignment
+            <br />
+            <em>Combo.</em>
+          </h2>
+
+          <p class="offer-description">
+            All 14 drawings prepared for your Fine Arts assignment.
+          </p>
+
+          <a class="hero-button" href="/gallery">
+            View the artwork
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="offer-price">
+          <span>₹</span>{assignmentCombo.price.toLocaleString("en-IN")}
+        </div>
+      </section>
+      <section class="intro" id="about">
+        <p class="eyebrow">The assignment</p>
+
+        <div>
+          <h2>
+            Ten drawings.
+            <br />
+            <em>Five categories.</em>
+          </h2>
+
+          <p>
+            Browse the artwork prepared for the assignment and find the pieces
+            you need.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
