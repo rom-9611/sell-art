@@ -1,19 +1,10 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
-export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  }
-});
-
-import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite'; // or '@astrojs/tailwind', depending on your setup
 
 export default defineConfig({
   site: 'https://rom-9611.github.io',
   base: '/sell-art',
-  // ...keep your existing config options here
+  vite: {
+    plugins: [tailwindcss()]
+  }
 });
