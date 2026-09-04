@@ -1,3 +1,4 @@
+```astro
 ---
 import "../styles/global.css";
 import { products } from "../data/products";
@@ -19,11 +20,11 @@ const assignmentCombo = products.find(
 
   <body>
     <header class="site-header">
-      <a class="logo" href="/">FINE ARTS<span>·2026</span></a>
+      <a class="logo" href={import.meta.env.BASE_URL}>FINE ARTS<span>·2026</span></a>
 
       <nav>
-        <a href="/gallery">Gallery</a>
-        <a href="#about">About</a>
+        <a href={`${import.meta.env.BASE_URL}gallery/`}>Gallery</a>
+        <a href={`${import.meta.env.BASE_URL}#about`}>About</a>
       </nav>
     </header>
 
@@ -43,7 +44,7 @@ const assignmentCombo = products.find(
             <strong>{deadline}</strong>?
           </p>
 
-          <a class="hero-button" href="/gallery">
+          <a class="hero-button" href={`${import.meta.env.BASE_URL}gallery/`}>
             Browse artwork
             <span>→</span>
           </a>
@@ -60,6 +61,7 @@ const assignmentCombo = products.find(
           </p>
         </div>
       </section>
+
       <section class="featured-offer">
         <div>
           <p class="eyebrow">Most convenient</p>
@@ -74,7 +76,7 @@ const assignmentCombo = products.find(
             All 14 drawings prepared for your Fine Arts assignment.
           </p>
 
-          <a class="hero-button" href="/gallery">
+          <a class="hero-button" href={`${import.meta.env.BASE_URL}gallery/`}>
             View the artwork
             <span>→</span>
           </a>
@@ -84,6 +86,7 @@ const assignmentCombo = products.find(
           <span>₹</span>{assignmentCombo.price.toLocaleString("en-IN")}
         </div>
       </section>
+
       <section class="intro" id="about">
         <p class="eyebrow">The assignment</p>
 
@@ -103,3 +106,5 @@ const assignmentCombo = products.find(
     </main>
   </body>
 </html>
+```
+

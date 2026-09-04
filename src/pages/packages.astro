@@ -31,15 +31,17 @@ const customOrder = products.find(
   </head>
 
   <body>
-    <header class="site-header">
-      <a class="logo" href="/">FINE ARTS<span>·2026</span></a>
+<header class="site-header">
+  <a class="logo" href={import.meta.env.BASE_URL}>
+    FINE ARTS<span>·2026</span>
+  </a>
 
-      <nav>
-        <a href="/">Home</a>
-        <a href="/gallery">Gallery</a>
-        <a href="/packages">Packages</a>
-      </nav>
-    </header>
+  <nav>
+    <a href={import.meta.env.BASE_URL}>Home</a>
+    <a href={`${import.meta.env.BASE_URL}gallery/`}>Gallery</a>
+    <a href={`${import.meta.env.BASE_URL}packages/`}>Packages</a>
+  </nav>
+</header>
 
     <main class="packages-page">
       <section class="packages-header">
